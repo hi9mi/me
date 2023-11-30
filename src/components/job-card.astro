@@ -1,0 +1,26 @@
+---
+interface Props {
+  company: string;
+  position: string;
+  time: string;
+  experience: string;
+  techStack: string[];
+}
+
+import List from "./list.astro";
+
+const { company, position, time, experience, techStack } = Astro.props;
+---
+
+<article>
+  <hgroup uno-mb="2">
+    <h3 uno-text="xl" uno-font="medium">{position}</h3>
+    <h3 uno-text="xl" uno-font="medium">{company}</h3>
+  </hgroup>
+  <span uno-text="base" uno-font="italic" uno-mb="2" uno-inline-block>{time}</span>
+  <p uno-text="base" uno-mb="2">
+    {experience}
+  </p>
+  <p uno-text="base">Technology stack:</p>
+  <List items={techStack} />
+</article>

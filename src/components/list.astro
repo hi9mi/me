@@ -1,0 +1,32 @@
+---
+interface Props {
+  items: string[];
+  direction?: "column" | "row";
+}
+
+const { items, direction = "row" } = Astro.props;
+---
+
+<ul
+  uno-flex
+  uno-flex-wrap
+  class:list={[
+    {
+      "flex-col gap-y-2": direction === "column",
+      "flex-row gap-x-2": direction === "row",
+    },
+  ]}
+>
+  {
+    items.map((item) => (
+      <li
+        uno-flex
+        uno-gap="2"
+        uno-items-center
+        class="before:block before:content-empty before:w-2 before:h-2 before:bg-gray-300 before:rounded"
+      >
+        {item}
+      </li>
+    ))
+  }
+</ul>
