@@ -16,12 +16,8 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v1
-        with:
-            path: .
-            node-version: 18
-            package-manager: npm
+      - name: Astro Deploy
+        uses: withastro/action@v1.0.3
 
   deploy:
     needs: build
