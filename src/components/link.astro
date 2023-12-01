@@ -1,0 +1,13 @@
+---
+// eslint-disable-next-line no-undef
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
+
+const { class: className, ...restProps } = Astro.props;
+---
+
+<a
+  {...restProps}
+  class:list={["text-blue visited:text-purple underline-offset-4 hover:underline", className]}
+>
+  <slot />
+</a>

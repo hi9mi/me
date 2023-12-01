@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./base-layout.astro";
 import ThemeSwitcher from "../components/theme-switcher.vue";
+import Link from "../components/link.astro";
 ---
 
 <BaseLayout title="Resume">
@@ -8,9 +9,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
     <div class="container flex justify-between gap-3">
       <div>
         <h1 uno-text="3xl" uno-font="medium" uno-mb="3">Roman Ospanov</h1>
-        <a href="/me" uno-text="sm blue visited:purple" class="underline-offset-4 hover:underline"
-          >Back to index</a
-        >
+        <Link href="/me" class="text-sm">Back to index</Link>
       </div>
       <ThemeSwitcher client:only />
     </div>
@@ -29,12 +28,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
             class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
             >email</span
           >
-          <a
-            href="mailto:hi9mmi@gmail.com"
-            uno-text="blue visited:purple"
-            class="underline-offset-4 hover:underline"
-            target="_blank">hi9mmi@gmail.com</a
-          >
+          <Link href="mailto:hi9mmi@gmail.com" target="_blank">hi9mmi@gmail.com</Link>
         </li>
         <li uno-flex uno-items-center uno-gap-1>
           <span
@@ -44,12 +38,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
             class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
             >phone</span
           >
-          <a
-            href="phone:+77086237230"
-            uno-text="blue visited:purple"
-            class="underline-offset-4 hover:underline"
-            target="_blank">+7 708 623 72 30</a
-          >
+          <Link href="phone:+77086237230" target="_blank">+7 708 623 72 30</Link>
         </li>
         <li uno-flex uno-items-center uno-gap-1>
           <span
@@ -59,12 +48,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
             class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
             >whatsapp</span
           >
-          <a
-            href="https://wa.me/77086237230"
-            uno-text="blue visited:purple"
-            class="underline-offset-4 hover:underline"
-            target="_blank">+7 708 623 72 30</a
-          >
+          <Link href="https://wa.me/77086237230" target="_blank">+7 708 623 72 30</Link>
         </li>
         <li uno-flex uno-items-center uno-gap-1>
           <span
@@ -74,12 +58,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
             class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
             >telegram</span
           >
-          <a
-            href="https://t.me/hi9mi"
-            uno-text="blue visited:purple"
-            class="underline-offset-4 hover:underline"
-            target="_blank">t.me/hi9mi</a
-          >
+          <Link href="https://t.me/hi9mi" target="_blank">t.me/hi9mi</Link>
         </li>
         <li uno-flex uno-items-center uno-gap-1>
           <span
@@ -89,12 +68,7 @@ import ThemeSwitcher from "../components/theme-switcher.vue";
             class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
             >github</span
           >
-          <a
-            href="https://github.com/hi9mi"
-            uno-text="blue visited:purple"
-            class="underline-offset-4 hover:underline"
-            target="_blank">github.com/hi9mi</a
-          >
+          <Link href="https://github.com/hi9mi" target="_blank">github.com/hi9mi</Link>
         </li>
       </ul>
     </div>
