@@ -1,32 +1,17 @@
 ---
-import BaseLayout from "./base-layout.astro";
-import ThemeSwitcher from "../components/theme-switcher.vue";
-import LanguagePicker from "../components/language-picker.astro";
-import Link from "../components/link.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
-const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+import LanguagePicker from "../../components/language-picker.astro";
+import Link from "../../components/link.astro";
+import List from "../../components/list.astro";
+import ThemeSwitcher from "../../components/theme-switcher.vue";
+import BaseLayout from "../../layouts/base-layout.astro";
 ---
 
-<BaseLayout title={t("title.resume")}>
-  <header uno-py="5" uno-border-b="1 gray-700">
-    <div class="container flex justify-between gap-3">
-      <div>
-        <h1 uno-text="3xl" uno-font="700" uno-mb="3">{t("heading.resume")}</h1>
-        <Link href={`/me/${lang}/`} class="text-sm">{t("nav.resume")}</Link>
-      </div>
-      <div class="flex items-center gap-3">
-        <LanguagePicker />
-        <ThemeSwitcher client:only />
-      </div>
-    </div>
-  </header>
-  <div uno-space-y="10" uno-py="10" class="container">
-    <slot />
-  </div>
-  <footer uno-py="5" uno-border-t="1 gray-700">
-    <div class="container">
+<BaseLayout title="Index">
+  <div
+    class="px-5 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full max-sm:flex-col-reverse"
+  >
+    <div>
+      <h1 uno-text="3xl" uno-font="medium" uno-mb="3">Roman Ospanov</h1>
       <ul uno-flex uno-flex-col uno-text-sm>
         <li uno-flex uno-items-center uno-gap-1>
           <span
@@ -80,5 +65,39 @@ const t = useTranslations(lang);
         </li>
       </ul>
     </div>
-  </footer>
+    <div class="flex items-center gap-3">
+      <LanguagePicker />
+      <ThemeSwitcher client:only />
+    </div>
+  </div>
+  <section class="pl-5 pr-5 sm:pl-10 pb-3">
+    <p>My name is Roman.</p>
+    <p>I'm a front-end developer.</p>
+    <Link href="/me/en/resume" class="text-base p-3 inline-block">Look for details</Link>
+    <p>Relative experience 1.6 years</p>
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Skills</h2>
+    <List
+      items={[
+        "Javascript(ES6+), Typescript, Golang, SQL",
+        "React.js, Vue.js 2|3, Next.js, Fastify, Express.js",
+        "Effector, Reatom, RTK, Pinia, Vuex, etc...",
+        "React-Router, Atomic-Router, Vue-Router",
+        "Felte, React-Hook-Form, Formik, VeeValidate, etc...",
+        "Tailwindcss, UnoCSS, styled-components, etc...",
+        "Material UI, Chakra UI, Mantine, etc...",
+        "Webpack, Rollup, Vite",
+        "Jest, React-Testing-Library, Storybook, Vitest, Histoire",
+        "ESLint, Prettier, etc...",
+        "git, git-flow, docker, docker-compose",
+      ]}
+      direction="column"
+    />
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Languages</h2>
+    <List items={["English -> A1 - A2", "Russian -> Native"]} direction="column" />
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Notes</h2>
+    <List
+      items={["I live in Kazakhstan", "I prefer remote work", "I'm ready to relocate"]}
+      direction="column"
+    />
+  </section>
 </BaseLayout>

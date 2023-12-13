@@ -1,0 +1,71 @@
+---
+import ResumeLayout from "../../layouts/resume-layout.astro";
+import JobCard from "../../components/job-card.astro";
+import ResumeSection from "../../components/resume-section.astro";
+import List from "../../components/list.astro";
+---
+
+<ResumeLayout>
+  <ResumeSection title="Сводка">
+    <p uno-text="base">
+      Квалифицированный разработчик с опытом работы 1 год 6 месяцев в области front-end разработки.
+      Я уделяю внимание пользовательскому опыту каждого продукта, который я использую, и собираю
+      лучшие и худшие практики в личную коллекцию. У меня есть страсть к упрощению сложных вопросов.
+      Простые вопросы требуют простых решений.
+    </p>
+  </ResumeSection>
+  <ResumeSection title="Опыт" className="space-y-5">
+    <JobCard
+      position="Front-end Developer"
+      company="HIVEXIQ OU"
+      time="Июнь 2022 - Январь 2023 (8 месяцев)"
+      experience="Работал на проекте связанным с преобразованием формата документов, картинок (коллаж мейкер) и тд. Взаимодейстовал с другими членами команды (проджект менеджером, бекенд разработчиками, QA тестировщиками). Работал над тем, что переписывал код написанный на jquery на React виджеты и улучшал функционал, писал самописные webpack конфиги, писал юнит тесты. Сложная задача с которой я столкнулся, это коллаж мейкер на канвасе, сложной она была, так как до этого я не работал с canvas API. Нужно было сделать несколько шаблонов коллажа, которые мог выбирать пользователь и в каждом шаблоне он имел возможность менять размер картинки, при этом когда пользователь менял размер одной картинки другие заполняли свободное пространство. Также имелась возможность писать текст, выбирать его цвет, шрифт, размер и тд."
+      techStack={[
+        "Redmine",
+        "Gitlab",
+        "Jenkins",
+        "React",
+        "Webpack",
+        "Jest",
+        "MUI",
+        "React-Konva",
+        "and a few small libraries",
+      ]}
+    />
+    <JobCard
+      position="Front-end Developer"
+      company="Chesstery Ltd."
+      time="Август 2021 - Июнь 2022 (11 месяцев)"
+      experience="Крутой стартап с командой, которая состояла из 4 фронт-енд разработчиков,1 бек-енд разработчика и проджект менеджера (и дизайнера). Идея стартапа была в том, чтобы сделать аналог lichess, только отличие в том, что на нашей платформе могли обучаться дети игре в шахматы. Больше всего времени работал над страницей конструктора упражнений, который доступен только для преподавателей, в котором они могут создавать свои особенные упражнения для учеников. Также работал над другими страницами: студии, туториал, конструктор пдф и др. Также разрабатывал другие маленькие фичи, например как смена стиля шахматных фигур, смена цвета доски и др. На тот момент сложной задачей для меня стало это форк библиотеки - движка для игры в шахматы и кастомизация ее."
+      techStack={[
+        "Github",
+        "React",
+        "Typescript",
+        "Redux",
+        "MUI",
+        "React-Router",
+        "MUI",
+        "WebSocket",
+        "Chess.js(Forked)",
+      ]}
+    />
+  </ResumeSection>
+  <ResumeSection title="Навыки">
+    <List
+      items={[
+        "Javascript(ES6+), Typescript, Golang, SQL",
+        "React.js, Vue.js 2|3, Next.js, Fastify, Express.js",
+        "Effector, Reatom, RTK, Pinia, Vuex, etc...",
+        "React-Router, Atomic-Router, Vue-Router",
+        "Felte, React-Hook-Form, Formik, VeeValidate, etc...",
+        "Tailwindcss, UnoCSS, styled-components, etc...",
+        "Material UI, Chakra UI, Mantine, etc...",
+        "Webpack, Rollup, Vite",
+        "Jest, React-Testing-Library, Storybook, Vitest, Histoire",
+        "ESLint, Prettier, etc...",
+        "git, git-flow, docker, docker-compose",
+      ]}
+      direction="column"
+    />
+  </ResumeSection>
+</ResumeLayout>

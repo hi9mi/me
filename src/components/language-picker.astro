@@ -1,0 +1,14 @@
+---
+import { languages } from "../i18n/ui";
+const [, , , ...path] = Astro.url.pathname.split("/");
+---
+
+<ul>
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a href={`/me/${lang}/${path}`}>{label}</a>
+      </li>
+    ))
+  }
+</ul>

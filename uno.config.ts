@@ -15,10 +15,10 @@ export default defineConfig({
         presetWebFonts({
             provider: 'google',
             fonts: {
-                dm: [
+                noto: [
                     {
-                      name: 'DM Mono',
-                      weights: ['300', '400', '500'],
+                      name: 'Noto Sans Mono',
+                      weights: ['300', '400', '500', '600', '700'],
                       italic: true,
                     },
                     {

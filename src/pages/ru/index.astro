@@ -1,0 +1,101 @@
+---
+import LanguagePicker from "../../components/language-picker.astro";
+import Link from "../../components/link.astro";
+import List from "../../components/list.astro";
+import ThemeSwitcher from "../../components/theme-switcher.vue";
+import BaseLayout from "../../layouts/base-layout.astro";
+---
+
+<BaseLayout title="Главная">
+  <div class="px-5 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full">
+    <div>
+      <h1 uno-text="3xl" uno-font="medium" uno-mb="3">Роман Оспанов</h1>
+      <ul uno-flex uno-flex-col uno-text-sm>
+        <li uno-flex uno-items-center uno-gap-1>
+          <span
+            uno-flex
+            uno-w-28
+            uno-gap-1
+            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
+            >email</span
+          >
+          <Link href="mailto:hi9mmi@gmail.com" target="_blank">hi9mmi@gmail.com</Link>
+        </li>
+        <li uno-flex uno-items-center uno-gap-1>
+          <span
+            uno-flex
+            uno-w-28
+            uno-gap-1
+            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
+            >phone</span
+          >
+          <Link href="phone:+77086237230" target="_blank">+7 708 623 72 30</Link>
+        </li>
+        <li uno-flex uno-items-center uno-gap-1>
+          <span
+            uno-flex
+            uno-w-28
+            uno-gap-1
+            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
+            >whatsapp</span
+          >
+          <Link href="https://wa.me/77086237230" target="_blank">+7 708 623 72 30</Link>
+        </li>
+        <li uno-flex uno-items-center uno-gap-1>
+          <span
+            uno-flex
+            uno-w-28
+            uno-gap-1
+            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
+            >telegram</span
+          >
+          <Link href="https://t.me/hi9mi" target="_blank">t.me/hi9mi</Link>
+        </li>
+        <li uno-flex uno-items-center uno-gap-1>
+          <span
+            uno-flex
+            uno-w-28
+            uno-gap-1
+            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
+            >github</span
+          >
+          <Link href="https://github.com/hi9mi" target="_blank">github.com/hi9mi</Link>
+        </li>
+      </ul>
+    </div>
+    <div class="flex items-center gap-3">
+      <LanguagePicker />
+      <ThemeSwitcher client:only />
+    </div>
+  </div>
+  <section class="pl-5 pr-5 sm:pl-10 pb-3">
+    <p>Меня зовут Роман.</p>
+    <p>Я front-end разработчик.</p>
+    <Link href="/me/ru/resume" class="text-base p-3 inline-block">Подробнее</Link>
+    <p>Опыт работы 1 год 6 месяцев</p>
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Навыки</h2>
+    <List
+      items={[
+        "Javascript(ES6+), Typescript, Golang, SQL",
+        "React.js, Vue.js 2|3, Next.js, Fastify, Express.js",
+        "Effector, Reatom, RTK, Pinia, Vuex, etc...",
+        "React-Router, Atomic-Router, Vue-Router",
+        "Felte, React-Hook-Form, Formik, VeeValidate, etc...",
+        "Tailwindcss, UnoCSS, styled-components, etc...",
+        "Material UI, Chakra UI, Mantine, etc...",
+        "Webpack, Rollup, Vite",
+        "Jest, React-Testing-Library, Storybook, Vitest, Histoire",
+        "ESLint, Prettier, etc...",
+        "git, git-flow, docker, docker-compose",
+      ]}
+      direction="column"
+    />
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Языки</h2>
+    <List items={["Английский -> A1 - A2", "Русский -> Родной"]} direction="column" />
+    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Примечания</h2>
+    <List
+      items={["Живу в Казахстане", "Предпочитаю удаленную работу", "Также готов к переезду"]}
+      direction="column"
+    />
+  </section>
+</BaseLayout>

@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, watchEffect } from "vue";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const theme = ref(globalThis.localStorage.getItem("theme") ?? "light");
+const lang = getLangFromUrl(location.pathname);
+const t = useTranslations(lang);
 
 const toggle = () => {
   theme.value = theme.value === "dark" ? "light" : "dark";
@@ -20,7 +23,8 @@ watchEffect(() => {
 <template>
   <button
     @click="toggle"
-    title="Toggle theme"
+    :title="`${t('themeSwitcher.text')} ${theme === 'dark' ? t('themeSwitcher.light') : t('themeSwitcher.dark')}`"
+    :aria-label="`${t('themeSwitcher.text')} ${theme === 'dark' ? t('themeSwitcher.light') : t('themeSwitcher.dark')}`"
     id="theme-toggle"
     type="button"
     class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-gray-200 dark:focus-visible:ring-gray-700 rounded-lg text-sm p-2.5 h-max"
@@ -51,6 +55,5 @@ watchEffect(() => {
         clip-rule="evenodd"
       ></path>
     </svg>
-    <span class="sr-only">Switch theme to {{ theme === "dark" ? "light" : "dark" }}</span>
   </button>
 </template>

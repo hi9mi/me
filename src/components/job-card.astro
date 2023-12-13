@@ -7,20 +7,23 @@ interface Props {
   techStack: string[];
 }
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import List from "./list.astro";
 
 const { company, position, time, experience, techStack } = Astro.props;
+const lang = getLangFromUrl(Astro.url.pathname);
+const t = useTranslations(lang);
 ---
 
 <article>
   <hgroup uno-mb="2">
-    <h3 uno-text="xl" uno-font="medium">{position}</h3>
-    <h3 uno-text="xl" uno-font="medium">{company}</h3>
+    <h3 uno-text="xl" uno-font="600">{position}</h3>
+    <h3 uno-text="xl" uno-font="600">{company}</h3>
   </hgroup>
-  <span uno-text="base" uno-font="italic" uno-mb="2" uno-inline-block>{time}</span>
+  <span uno-text="base" uno-font="italic 300" uno-mb="2" uno-inline-block>{time}</span>
   <p uno-text="base" uno-mb="2">
     {experience}
   </p>
-  <p uno-text="base">Technology stack:</p>
+  <p uno-text="base">{t("jobCard.techStack")}:</p>
   <List items={techStack} />
 </article>
