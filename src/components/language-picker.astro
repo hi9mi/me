@@ -7,7 +7,7 @@ const [, , , ...path] = Astro.url.pathname.split("/");
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>
-        <a href={`/me/${lang}/${path}`}>{label}</a>
+        <a href={`/me/${lang}/${path.join("/")}`}>{label}</a>
       </li>
     ))
   }
