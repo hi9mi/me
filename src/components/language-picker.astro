@@ -1,6 +1,6 @@
 ---
 import { languages } from "../i18n/ui";
-const [, , , ...path] = Astro.url.pathname.split("/");
+const path = Astro.url.pathname.split("/").slice(3);
 ---
 
 <ul>

@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url.pathname);
 const t = useTranslations(lang);
 ---
 
-<BaseLayout title={t("title.resume")}>
+<BaseLayout title={t("title.resume")} ogImg={`${import.meta.env.SITE}/resume-og.png`}>
   <header uno-py="5" uno-border-b="1 gray-700">
     <div class="container flex justify-between gap-3">
       <div>

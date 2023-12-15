@@ -1,23 +1,32 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Metadata from "../components/metadata.astro";
 interface Props {
   title: string;
+  ogImg: string;
 }
 
-const { title } = Astro.props;
+const { title, ogImg } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="A little bit of information about me" />
     <meta name="viewport" content="width=device-width" />
     <link rel="apple-touch-icon" sizes="180x180" href="/me/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/me/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/me/favicon-16x16.png" />
     <link rel="manifest" href="/me/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
+    <Metadata
+      slot="head"
+      title={title}
+      description="A little bit of information about me"
+      image={ogImg}
+      canonicalUrl={`${import.meta.env.SITE}/`}
+      type="website"
+    />
     <title>{title}</title>
     <ViewTransitions />
   </head>
