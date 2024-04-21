@@ -2,8 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import type { APIRoute } from "astro";
 import { readFileSync } from "fs";
 
-export const GET: APIRoute = ({ params }) => {
-  console.log(params);
+export const GET: APIRoute = () => {
   const NotoSansMono = readFileSync(`${process.cwd()}/public/fonts/NotoSansMono-Bold.ttf`);
 
   const html = {
@@ -76,12 +75,4 @@ export const GET: APIRoute = ({ params }) => {
       },
     ],
   });
-};
-
-export const getStaticPaths = () => {
-  return [
-    { params: { id: "0" }, props: { name: "Sarah" } },
-    { params: { id: "1" }, props: { name: "Chris" } },
-    { params: { id: "2" }, props: { name: "Fuzzy" } },
-  ];
 };
