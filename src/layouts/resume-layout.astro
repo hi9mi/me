@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout title={t("title.resume")} ogImg={`${import.meta.env.SITE}/me/resume-og.png`}>
-  <header uno-py="5" uno-border-b="1 gray-700">
+  <header uno-py="5" uno-border-b="1 gray-700" uno-pos-sticky uno-top="0" uno-bg-white uno-dark:bg-gray-800>
     <div class="container flex justify-between gap-3">
       <div>
         <h1 uno-text="3xl" uno-font="700" uno-mb="3">{t("heading.resume")}</h1>
@@ -25,7 +25,7 @@ const t = useTranslations(lang);
   <div uno-space-y="10" uno-py="10" class="container">
     <slot />
   </div>
-  <footer uno-py="5" uno-border-t="1 gray-700">
+  <footer uno-py="5" uno-border-t="1 gray-700" uno-pos-sticky uno-bottom="0"  uno-bg-white uno-dark:bg-gray-800>
     <div class="container">
       <ul uno-flex uno-flex-col uno-text-sm>
         <li uno-flex uno-items-center uno-gap-1>
