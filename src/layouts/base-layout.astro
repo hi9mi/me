@@ -26,7 +26,7 @@ const lang = getLangFromUrl(Astro.url.pathname);
       title={title}
       description="A little bit of information about me"
       image={ogImg}
-      canonicalUrl={`${import.meta.env.SITE}/`}
+      canonicalUrl={`${import.meta.env.SITE}/me/`}
       type="website"
     />
     <title>{title}</title>
@@ -55,11 +55,11 @@ const lang = getLangFromUrl(Astro.url.pathname);
 
     <style is:global>
       html {
-        --uno: font-noto scroll-smooth;
+        --uno: font-iosevka scroll-smooth;
       }
 
       .container {
-        --uno: max-w-screen-lg w-full px-3.5 m-auto;
+        --uno: max-w-screen-lg w-full px-2 m-auto md:px-5;
       }
     </style>
   </body>

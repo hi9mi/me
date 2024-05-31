@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 import { readFileSync } from "fs";
 
 export const GET: APIRoute = () => {
-  const NotoSansMono = readFileSync(`${process.cwd()}/public/fonts/NotoSansMono-Bold.ttf`);
+  const Iosevka = readFileSync(`${process.cwd()}/public/fonts/Iosevka-Bold.ttf`);
 
   const html = {
     type: "div",
@@ -14,7 +14,7 @@ export const GET: APIRoute = () => {
           props: {
             style: {
               fontSize: "48px",
-              fontFamily: "Noto Sans Mono",
+              fontFamily: "Iosevka",
             },
             children: "Resume Page",
           },
@@ -29,7 +29,7 @@ export const GET: APIRoute = () => {
                 props: {
                   tw: "text-blue-500 text-3xl",
                   style: {
-                    fontFamily: "Noto Sans Mono",
+                    fontFamily: "Iosevka",
                   },
                   children: "Roman Ospanov",
                 },
@@ -59,7 +59,7 @@ export const GET: APIRoute = () => {
       style: {
         backgroundColor: "#E2E8F0",
         color: "#1F2937",
-        fontFamily: "Noto Sans Mono",
+        fontFamily: "Iosevka",
       },
     },
   };
@@ -69,8 +69,8 @@ export const GET: APIRoute = () => {
     height: 600,
     fonts: [
       {
-        name: "Noto Sans Mono",
-        data: NotoSansMono.buffer,
+        name: "Iosevka",
+        data: Iosevka.buffer,
         style: "normal",
       },
     ],

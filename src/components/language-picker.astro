@@ -3,7 +3,7 @@ import { languages } from "../i18n/ui";
 const path = Astro.url.pathname.split("/").slice(3);
 ---
 
-<ul>
+<ul class="text-sm font-300 sm:text-base">
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>

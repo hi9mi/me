@@ -7,58 +7,48 @@ import BaseLayout from "../../layouts/base-layout.astro";
 ---
 
 <BaseLayout title="Главная" ogImg={`${import.meta.env.SITE}/me/index-og.png`}>
-  <div class="px-5 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full">
+  <div class="px-2 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full max-sm:flex-col-reverse sm-px-5">
     <div>
-      <h1 uno-text="3xl" uno-font="medium" uno-mb="3">Роман Оспанов</h1>
-      <ul uno-flex uno-flex-col uno-text-sm>
-        <li uno-flex uno-items-center uno-gap-1>
+      <h1 class="text-2xl font-700 mb-3 sm:text-3xl">Роман Оспанов</h1>
+      <ul class="flex flex-col text-xs font-300 sm:text-sm">
+        <li class="flex items-center gap-1">
           <span
-            uno-flex
-            uno-w-28
-            uno-gap-1
-            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
-            >email</span
+            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
           >
+            email
+          </span>
           <Link href="mailto:hi9mmi@gmail.com" target="_blank">hi9mmi@gmail.com</Link>
         </li>
-        <li uno-flex uno-items-center uno-gap-1>
+        <li class="flex items-center gap-1">
           <span
-            uno-flex
-            uno-w-28
-            uno-gap-1
-            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
-            >phone</span
+            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
           >
+            phone
+          </span>
           <Link href="phone:+77086237230" target="_blank">+7 708 623 72 30</Link>
         </li>
-        <li uno-flex uno-items-center uno-gap-1>
+        <li class="flex items-center gap-1">
           <span
-            uno-flex
-            uno-w-28
-            uno-gap-1
-            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
-            >whatsapp</span
+            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
           >
+            whatsapp
+          </span>
           <Link href="https://wa.me/77086237230" target="_blank">+7 708 623 72 30</Link>
         </li>
-        <li uno-flex uno-items-center uno-gap-1>
+        <li class="flex items-center gap-1">
           <span
-            uno-flex
-            uno-w-28
-            uno-gap-1
-            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
-            >telegram</span
+            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
           >
+            telegram
+          </span>
           <Link href="https://t.me/hi9mi" target="_blank">t.me/hi9mi</Link>
         </li>
-        <li uno-flex uno-items-center uno-gap-1>
+        <li class="flex items-center gap-1">
           <span
-            uno-flex
-            uno-w-28
-            uno-gap-1
-            class="after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1.5"
-            >github</span
+            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
           >
+            github
+          </span>
           <Link href="https://github.com/hi9mi" target="_blank">github.com/hi9mi</Link>
         </li>
       </ul>
@@ -68,12 +58,12 @@ import BaseLayout from "../../layouts/base-layout.astro";
       <ThemeSwitcher client:only />
     </div>
   </div>
-  <section class="pl-5 pr-5 sm:pl-10 pb-3">
-    <p>Меня зовут Роман.</p>
-    <p>Я front-end разработчик.</p>
-    <Link href="/me/ru/resume" class="text-base p-3 inline-block">Подробнее</Link>
-    <p>Опыт работы 1 год 6 месяцев</p>
-    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Навыки</h2>
+  <section class="pl-2 pr-2 sm:pl-10 pb-3">
+    <p class="font-300">Меня зовут Роман.</p>
+    <p class="font-300">Я front-end разработчик.</p>
+    <Link href="/me/ru/resume" class="py-1 inline-block text-base sm:p-3">Подробнее</Link>
+    <p class="font-300">Опыт работы 1 год 6 месяцев</p>
+    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Навыки</h2>
     <List
       items={[
         "Javascript(ES6+), Typescript, Golang, SQL",
@@ -90,9 +80,9 @@ import BaseLayout from "../../layouts/base-layout.astro";
       ]}
       direction="column"
     />
-    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Языки</h2>
+    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Языки</h2>
     <List items={["Английский -> A1 - A2", "Русский -> Родной"]} direction="column" />
-    <h2 uno-text="xl" uno-font="medium" uno-mb="2" uno-mt="10">Примечания</h2>
+    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Примечания</h2>
     <List
       items={["Живу в Казахстане", "Предпочитаю удаленную работу", "Также готов к переезду"]}
       direction="column"

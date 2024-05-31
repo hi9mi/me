@@ -16,14 +16,14 @@ const t = useTranslations(lang);
 ---
 
 <article>
-  <hgroup uno-mb="2">
-    <h3 uno-text="xl" uno-font="600">{position}</h3>
-    <h3 uno-text="xl" uno-font="600">{company}</h3>
+  <hgroup class="mb-2">
+    <h3 class="text-lg font-600 sm:text-xl">{position}</h3>
+    <h3 class="text-lg font-600 sm:text-xl">{company}</h3>
   </hgroup>
-  <span uno-text="base" uno-font="italic 300" uno-mb="2" uno-inline-block>{time}</span>
-  <p uno-text="base" uno-mb="2">
+  <span class="text-sm font-italic font-300 mb-2 inline-block sm:text-base">{time}</span>
+  <p class="text-sm font-300 mb-2 sm:text-base">
     {experience}
   </p>
-  <p uno-text="base">{t("jobCard.techStack")}:</p>
+  <p class="text-sm font-500 mb-1 sm:text-base">{t("jobCard.techStack")}:</p>
   <List items={techStack} />
 </article>
