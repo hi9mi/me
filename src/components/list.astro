@@ -1,26 +1,24 @@
 ---
 interface Props {
-  items: string[];
-  direction?: "column" | "row";
+  items: string[]
+  direction?: 'column' | 'row'
 }
 
-const { items, direction = "row" } = Astro.props;
+const { items, direction = 'row' } = Astro.props
 ---
 
 <ul
   class="flex flex-wrap font-300 text-sm sm:text-base"
   class:list={[
     {
-      "flex-col gap-y-2": direction === "column",
-      "flex-row gap-x-2": direction === "row",
+      'flex-col gap-y-2': direction === 'column',
+      'flex-row gap-x-2': direction === 'row',
     },
   ]}
 >
   {
     items.map((item) => (
-      <li
-        class="flex gap-2 items-center before:block before:content-empty before:w-2 before:h-2 before:min-w-2 before:min-h-2 before:bg-gray-300 before:rounded"
-      >
+      <li class="flex gap-2 items-center before:block before:content-empty before:w-2 before:h-2 before:min-w-2 before:min-h-2 before:bg-gray-300 before:rounded">
         {item}
       </li>
     ))

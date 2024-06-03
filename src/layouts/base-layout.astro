@@ -1,14 +1,15 @@
 ---
-import { ViewTransitions } from "astro:transitions";
-import Metadata from "../components/metadata.astro";
-import { getLangFromUrl } from "../i18n/utils";
+import { ViewTransitions } from 'astro:transitions'
+import Metadata from '../components/metadata.astro'
+import { getLangFromUrl } from '../i18n/get-lang-from-url'
+
 interface Props {
-  title: string;
-  ogImg: string;
+  title: string
+  ogImg: string
 }
 
-const { title, ogImg } = Astro.props;
-const lang = getLangFromUrl(Astro.url.pathname);
+const { title, ogImg } = Astro.props
+const lang = getLangFromUrl(Astro.url.pathname)
 ---
 
 <!doctype html>
@@ -16,10 +17,24 @@ const lang = getLangFromUrl(Astro.url.pathname);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/me/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/me/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/me/favicon-16x16.png" />
-    <link rel="icon" href="/me/favicon.ico">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/me/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/me/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/me/favicon-16x16.png"
+    />
+    <link rel="icon" href="/me/favicon.ico" />
     <link rel="manifest" href="/me/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
     <Metadata
@@ -33,34 +48,44 @@ const lang = getLangFromUrl(Astro.url.pathname);
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body class="bg-white text-blueGray-800 dark:text-blueGray-200 dark:bg-gray-800">
+  <body
+    class="bg-white text-blueGray-800 dark:text-blueGray-200 dark:bg-gray-800"
+  >
     <slot />
+
     <script is:inline>
-      const theme = (() => {
-        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-          return localStorage.getItem("theme");
+      /* eslint-disable */
+      // eslint-plugin-formatters breaks formatting
+      function getTheme() {
+        if (
+          typeof localStorage !== 'undefined' &&
+          localStorage.getItem('theme')
+        ) {
+          return localStorage.getItem('theme')
         }
-        if (globalThis.matchMedia("(prefers-color-scheme: dark)").matches) {
-          return "dark";
+        if (globalThis.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark'
         }
-        return "light";
-      })();
-
-      if (theme === "light") {
-        document.documentElement.classList.remove("dark");
-      } else {
-        document.documentElement.classList.add("dark");
+        return 'light'
       }
-      globalThis.localStorage.setItem("theme", theme);
-    </script>
 
+      const theme = getTheme()
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark')
+      } else {
+        document.documentElement.classList.add('dark')
+      }
+      globalThis.localStorage.setItem('theme', theme)
+      /* eslint-enable */
+    </script>
     <style is:global>
       html {
         --uno: font-iosevka scroll-smooth;
       }
 
       .container {
-        --uno: max-w-screen-lg w-full px-2 m-auto md:px-5;
+        --uno: max-w-screen-lg w-full px-2 m-auto md: px-5;
       }
     </style>
   </body>

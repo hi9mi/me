@@ -1,0 +1,27 @@
+[
+  {
+    "label": "email",
+    "linkText": "hi9mmi@gmail.com",
+    "linkProps": { "href": "mailto:hi9mmi@gmail.com", "target": "_blank" }
+  },
+  {
+    "label": "phone",
+    "linkText": "+7 708 623 72 30",
+    "linkProps": { "href": "phone:+77086237230", "target": "_blank" }
+  },
+  {
+    "label": "whatsapp",
+    "linkText": "+7 708 623 72 30",
+    "linkProps": { "href": "https://wa.me/77086237230", "target": "_blank" }
+  },
+  {
+    "label": "telegram",
+    "linkText": "t.me/hi9mi",
+    "linkProps": { "href": "https://t.me/hi9mi", "target": "_blank" }
+  },
+  {
+    "label": "github",
+    "linkText": "github.com/hi9mi",
+    "linkProps": { "href": "https://github.com/hi9mi", "target": "_blank" }
+  }
+]

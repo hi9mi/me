@@ -1,68 +1,42 @@
 ---
-import ResumeLayout from "../../layouts/resume-layout.astro";
-import JobCard from "../../components/job-card.astro";
-import ResumeSection from "../../components/resume-section.astro";
-import List from "../../components/list.astro";
+import ResumeLayout from '../../layouts/resume-layout.astro'
+import JobCard from '../../components/job-card.astro'
+import ResumeSection from '../../components/resume-section.astro'
+import List from '../../components/list.astro'
+import skills from '../../data/skills.json'
+import { getTranslations } from '../../i18n/get-translations'
+import { getLangFromUrl } from '../../i18n/get-lang-from-url'
+
+const lang = getLangFromUrl(Astro.url.pathname)
+const t = getTranslations(lang)
 ---
 
 <ResumeLayout>
-  <ResumeSection title="Summary">
+  <ResumeSection title={t('resume.summary.title')}>
     <p class="text-sm font-300 sm:text-base">
-      Skilled developer with 1.6 years of experience in front-end development. I pay close attention to the user experience of every product I use and analyze it to identify the best and worst aspects. Have a passion for simplify complex matters. Simple matters give simple solutions.
+      {t('resume.summary.text')}
     </p>
   </ResumeSection>
-  <ResumeSection title="Experience" className="space-y-2.5 sm:space-y-5">
+  <ResumeSection
+    title={t('resume.experience.title')}
+    className="space-y-2.5 sm:space-y-5"
+  >
     <JobCard
-      position="Front-end Developer"
-      company="HIVEXIQ OU"
-      time="June 2022 - January 2023 (8 months)"
-      experience="Worked on a project related to document format conversion, picture conversion (collage maker), etc. Interacted with other team members (project manager, backend developers, QA testers). Worked on rewriting code written in jquery to React widgets and improving functionality, wrote self-written webpack configs, writing unit tests. The hardest task I encountered was a collage maker on canvas, it was hard because I hadn't worked with the canvas API before. It was necessary to make several collage templates that could be selected by the user and in each template he had the opportunity to change the size of the picture, and when the user changed the size of one picture, the others filled the free space. It was also possible to write text, choose its color, font, size, etc"
-      techStack={[
-        "Redmine",
-        "Gitlab",
-        "Jenkins",
-        "React",
-        "Webpack",
-        "Jest",
-        "MUI",
-        "React-Konva",
-        "and a few small libraries",
-      ]}
+      position={t('resume.experience.companies.hivexiq.position')}
+      company={t('resume.experience.companies.hivexiq.name')}
+      time={t('resume.experience.companies.hivexiq.time')}
+      experience={t('resume.experience.companies.hivexiq.description')}
+      techStack={t('resume.experience.companies.hivexiq.techStack')}
     />
     <JobCard
-      position="Front-end Developer"
-      company="Chesstery Ltd."
-      time="August 2021 - June 2022 (11 months)"
-      experience="Cool startup with a team that consisted of 4 front-end developers, 1 back-end developer and a project manager (and designer). The idea of the startup was to make an analog of lichess, only the difference was that on our platform children could learn to play chess. I spent most of my time working on the exercise builder page, which is only available for teachers, in which they can create their own special exercises for students. Also worked on other pages: studio, tutorial, pdf builder, etc. Also developed other small chips like changing the style of chess pieces, changing the color of the board, etc. At that time the hard task for me was to fork a library - an engine for playing chess and customize it."
-      techStack={[
-        "Github",
-        "React",
-        "Typescript",
-        "Redux",
-        "MUI",
-        "React-Router",
-        "MUI",
-        "WebSocket",
-        "Chess.js(Forked)",
-      ]}
+      position={t('resume.experience.companies.chesstery.position')}
+      company={t('resume.experience.companies.chesstery.name')}
+      time={t('resume.experience.companies.chesstery.time')}
+      experience={t('resume.experience.companies.chesstery.description')}
+      techStack={t('resume.experience.companies.chesstery.techStack')}
     />
   </ResumeSection>
-  <ResumeSection title="Skills">
-    <List
-      items={[
-        "Javascript(ES6+), Typescript, Golang, SQL",
-        "React.js, Vue.js 2|3, Next.js, Fastify, Express.js",
-        "Effector, Reatom, RTK, Pinia, Vuex, etc...",
-        "React-Router, Atomic-Router, Vue-Router",
-        "Felte, React-Hook-Form, Formik, VeeValidate, etc...",
-        "Tailwindcss, UnoCSS, styled-components, etc...",
-        "Material UI, Chakra UI, Mantine, etc...",
-        "Webpack, Rollup, Vite",
-        "Jest, React-Testing-Library, Storybook, Vitest, Histoire",
-        "ESLint, Prettier, etc...",
-        "git, git-flow, docker, docker-compose",
-      ]}
-      direction="column"
-    />
+  <ResumeSection title={t('resume.skills.title')}>
+    <List items={skills} direction="column" />
   </ResumeSection>
 </ResumeLayout>

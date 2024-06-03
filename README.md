@@ -16,4 +16,3 @@ The following technologies were used to create this project:
 - **[Astro](https://astro.build/)**: For static content generation.
 - **[Vue](https://vuejs.org/)**: For interactive components.
 - **[UnoCSS](https://unocss.dev/)**: A powerful tool for managing CSS.
-

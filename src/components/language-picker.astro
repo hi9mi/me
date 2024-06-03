@@ -1,13 +1,14 @@
 ---
-import { languages } from "../i18n/ui";
-const path = Astro.url.pathname.split("/").slice(3);
+import { languages } from '../i18n/languages'
+
+const path = Astro.url.pathname.split('/').slice(3)
 ---
 
 <ul class="text-sm font-300 sm:text-base">
   {
     Object.entries(languages).map(([lang, label]) => (
       <li>
-        <a href={`/me/${lang}/${path.join("/")}`}>{label}</a>
+        <a href={`/me/${lang}/${path.join('/')}`}>{label}</a>
       </li>
     ))
   }

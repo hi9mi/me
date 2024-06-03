@@ -1,91 +1,59 @@
 ---
-import LanguagePicker from "../../components/language-picker.astro";
-import Link from "../../components/link.astro";
-import List from "../../components/list.astro";
-import ThemeSwitcher from "../../components/theme-switcher.vue";
-import BaseLayout from "../../layouts/base-layout.astro";
+import LanguagePicker from '../../components/language-picker.astro'
+import Link from '../../components/link.astro'
+import List from '../../components/list.astro'
+import ThemeSwitcher from '../../components/theme-switcher.vue'
+import BaseLayout from '../../layouts/base-layout.astro'
+import socialLinks from '../../data/social-links.json'
+import LinkList from '../../components/link-list.astro'
+import skills from '../../data/skills.json'
+import { getLangFromUrl } from '../../i18n/get-lang-from-url'
+import { getTranslations } from '../../i18n/get-translations'
+
+const lang = getLangFromUrl(Astro.url.pathname)
+const t = getTranslations(lang)
 ---
 
-<BaseLayout title="Главная" ogImg={`${import.meta.env.SITE}/me/index-og.png`}>
-  <div class="px-2 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full max-sm:flex-col-reverse sm-px-5">
+<BaseLayout
+  title={t('index.title')}
+  ogImg={`${import.meta.env.SITE}/me/index-og.png`}
+>
+  <div
+    class="px-2 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full max-sm:flex-col-reverse sm-px-5"
+  >
     <div>
-      <h1 class="text-2xl font-700 mb-3 sm:text-3xl">Роман Оспанов</h1>
-      <ul class="flex flex-col text-xs font-300 sm:text-sm">
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            email
-          </span>
-          <Link href="mailto:hi9mmi@gmail.com" target="_blank">hi9mmi@gmail.com</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            phone
-          </span>
-          <Link href="phone:+77086237230" target="_blank">+7 708 623 72 30</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            whatsapp
-          </span>
-          <Link href="https://wa.me/77086237230" target="_blank">+7 708 623 72 30</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            telegram
-          </span>
-          <Link href="https://t.me/hi9mi" target="_blank">t.me/hi9mi</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            github
-          </span>
-          <Link href="https://github.com/hi9mi" target="_blank">github.com/hi9mi</Link>
-        </li>
-      </ul>
+      <h1 class="text-2xl font-700 mb-3 sm:text-3xl">{t('index.heading')}</h1>
+      <LinkList links={socialLinks} />
     </div>
     <div class="flex items-center gap-3">
       <LanguagePicker />
-      <ThemeSwitcher client:only />
+      <ThemeSwitcher client:only="vue" />
     </div>
   </div>
-  <section class="pl-2 pr-2 sm:pl-10 pb-3">
-    <p class="font-300">Меня зовут Роман.</p>
-    <p class="font-300">Я front-end разработчик.</p>
-    <Link href="/me/ru/resume" class="py-1 inline-block text-base sm:p-3">Подробнее</Link>
-    <p class="font-300">Опыт работы 1 год 6 месяцев</p>
-    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Навыки</h2>
-    <List
-      items={[
-        "Javascript(ES6+), Typescript, Golang, SQL",
-        "React.js, Vue.js 2|3, Next.js, Fastify, Express.js",
-        "Effector, Reatom, RTK, Pinia, Vuex, etc...",
-        "React-Router, Atomic-Router, Vue-Router",
-        "Felte, React-Hook-Form, Formik, VeeValidate, etc...",
-        "Tailwindcss, UnoCSS, styled-components, etc...",
-        "Material UI, Chakra UI, Mantine, etc...",
-        "Webpack, Rollup, Vite",
-        "Jest, React-Testing-Library, Storybook, Vitest, Histoire",
-        "ESLint, Prettier, etc...",
-        "git, git-flow, docker, docker-compose",
-      ]}
-      direction="column"
-    />
-    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Языки</h2>
-    <List items={["Английский -> A1 - A2", "Русский -> Родной"]} direction="column" />
-    <h2 class="text-lg font-500 mb-2 mt-5 sm:text-xl sm:mt-10">Примечания</h2>
-    <List
-      items={["Живу в Казахстане", "Предпочитаю удаленную работу", "Также готов к переезду"]}
-      direction="column"
-    />
-  </section>
+  <div class="px-2 pb-3 sm:px-5">
+    <section class="pr-0 sm:pl-5">
+      <p class="font-300">{t('index.shortDescription.name')}</p>
+      <p class="font-300">{t('index.shortDescription.position')}</p>
+      <Link href="/me/ru/resume" class="py-1 inline-block text-base sm:p-3">
+        {t('index.shortDescription.details')}
+      </Link>
+      <p class="font-300">{t('index.shortDescription.experience')}</p>
+    </section>
+    <section class="mt-5 sm:mt-10">
+      <h2 class="text-lg font-500 mb-2 sm:text-xl">
+        {t('index.skills.title')}
+      </h2>
+      <List items={skills} direction="column" />
+    </section>
+    <section class="mt-5 sm:mt-10">
+      <h2 class="text-lg font-500 mb-2 sm:text-xl">
+        {t('index.languages.title')}
+      </h2>
+      <List items={t('index.languages.list')} direction="column" />
+    </section>
+    <section class="mt-5 sm:mt-10">
+      <h2 class="text-lg font-500 mb-2 sm:text-xl">{t('index.notes.title')}</h2>
+      <List items={t('index.notes.list')} direction="column" />
+    </section>
+  </div>
 </BaseLayout>

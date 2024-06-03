@@ -1,18 +1,19 @@
 ---
+import { getLangFromUrl } from '../i18n/get-lang-from-url'
+import { getTranslations } from '../i18n/get-translations'
+import List from './list.astro'
+
 interface Props {
-  company: string;
-  position: string;
-  time: string;
-  experience: string;
-  techStack: string[];
+  company: string
+  position: string
+  time: string
+  experience: string
+  techStack: string[]
 }
 
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import List from "./list.astro";
-
-const { company, position, time, experience, techStack } = Astro.props;
-const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+const { company, position, time, experience, techStack } = Astro.props
+const lang = getLangFromUrl(Astro.url.pathname)
+const t = getTranslations(lang)
 ---
 
 <article>
@@ -20,10 +21,14 @@ const t = useTranslations(lang);
     <h3 class="text-lg font-600 sm:text-xl">{position}</h3>
     <h3 class="text-lg font-600 sm:text-xl">{company}</h3>
   </hgroup>
-  <span class="text-sm font-italic font-300 mb-2 inline-block sm:text-base">{time}</span>
+  <span class="text-sm font-italic font-300 mb-2 inline-block sm:text-base"
+    >{time}</span
+  >
   <p class="text-sm font-300 mb-2 sm:text-base">
     {experience}
   </p>
-  <p class="text-sm font-500 mb-1 sm:text-base">{t("jobCard.techStack")}:</p>
+  <p class="text-sm font-500 mb-1 sm:text-base">
+    {t('resume.techStackTitle')}:
+  </p>
   <List items={techStack} />
 </article>

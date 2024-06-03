@@ -1,0 +1,162 @@
+{
+  "en": {
+    "resume": {
+      "title": "Resume",
+      "heading": "Roman Ospanov",
+      "nav": "Back to index",
+      "summary": {
+        "title": "Summary",
+        "text": "Skilled developer with 1.6 years of experience in front-end development. I pay close attention to the user experience of every product I use and analyze it to identify the best and worst aspects. Have a passion for simplifying complex matters. Simple matters give simple solutions."
+      },
+      "experience": {
+        "title": "Experience",
+        "companies": {
+          "hivexiq": {
+            "position": "Front-end Developer",
+            "name": "HIVEXIQ OU",
+            "time": "June 2022 - January 2023 (8 months)",
+            "description": "Worked on a project related to document format conversion, picture conversion (collage maker), etc. Interacted with other team members (project manager, backend developers, QA testers). Worked on rewriting code written in jquery to React widgets and improving functionality, wrote self-written webpack configs, writing unit tests. The hardest task I encountered was a collage maker on canvas, it was hard because I hadn't worked with the canvas API before. It was necessary to make several collage templates that could be selected by the user and in each template he had the opportunity to change the size of the picture, and when the user changed the size of one picture, the others filled the free space. It was also possible to write text, choose its color, font, size, etc",
+            "techStack": [
+              "Redmine",
+              "Gitlab",
+              "Jenkins",
+              "React",
+              "Webpack",
+              "Jest",
+              "MUI",
+              "React-Konva",
+              "and a few small libraries"
+            ]
+          },
+          "chesstery": {
+            "position": "Front-end Developer",
+            "name": "Chesstery Ltd.",
+            "time": "August 2021 - June 2022 (11 months)",
+            "description": "Cool startup with a team that consisted of 4 front-end developers, 1 back-end developer and a project manager (and designer). The idea of the startup was to make an analog of lichess, only the difference was that on our platform children could learn to play chess. I spent most of my time working on the exercise builder page, which is only available for teachers, in which they can create their own special exercises for students. Also worked on other pages: studio, tutorial, pdf builder, etc. Also developed other small features like changing the style of chess pieces, changing the color of the board, etc. At that time the hard task for me was to fork a library - an engine for playing chess and customize it.",
+            "techStack": [
+              "Github",
+              "React",
+              "Typescript",
+              "Redux",
+              "MUI",
+              "React-Router",
+              "MUI",
+              "WebSocket",
+              "Chess.js(Forked)"
+            ]
+          }
+        }
+      },
+      "skills": {
+        "title": "Skills"
+      },
+      "techStackTitle": "Technology stack"
+    },
+    "index": {
+      "title": "Index",
+      "heading": "Roman Ospanov",
+      "shortDescription": {
+        "name": "My name is Roman.",
+        "position": "I'm a front-end developer.",
+        "experience": "Relative experience 1.6 years",
+        "details": "Look for details"
+      },
+      "skills": {
+        "title": "Skills"
+      },
+      "languages": {
+        "title": "Languages",
+        "list": ["English -> A1 - A2", "Russian -> Native"]
+      },
+      "notes": {
+        "title": "Notes",
+        "list": ["I live in Kazakhstan", "I prefer remote work", "I'm ready to relocate"]
+      }
+    },
+    "themeSwitcher": {
+      "text": "Switch theme to",
+      "light": "light",
+      "dark": "dark"
+    }
+  },
+  "ru": {
+    "resume": {
+      "title": "Резюме",
+      "heading": "Роман Оспанов",
+      "nav": "Вернуться на главную",
+      "summary": {
+        "title": "Обо мне",
+        "text": "Квалифицированный разработчик с 1,6 годами опыта в области front-end разработки. Я внимательно отношусь к пользовательскому опыту каждого продукта, который я использую, и анализирую его, чтобы выявить лучшие и худшие стороны. У меня есть страсть к упрощению сложных вопросов. Простые вопросы требуют простых решений."
+      },
+      "experience": {
+        "title": "Опыт",
+        "companies": {
+          "hivexiq": {
+            "position": "Front-end Developer",
+            "name": "HIVEXIQ OU",
+            "time": "Июнь 2022 - Январь 2023 (8 месяцев)",
+            "description": "Работал на проекте связанным с преобразованием формата документов, картинок (коллаж мейкер) и тд. Взаимодейстовал с другими членами команды (проджект менеджером, бекенд разработчиками, QA тестировщиками). Работал над тем, что переписывал код написанный на jquery на React виджеты и улучшал функционал, писал самописные webpack конфиги, писал юнит тесты. Сложная задача с которой я столкнулся, это коллаж мейкер на канвасе, сложной она была, так как до этого я не работал с canvas API. Нужно было сделать несколько шаблонов коллажа, которые мог выбирать пользователь и в каждом шаблоне он имел возможность менять размер картинки, при этом когда пользователь менял размер одной картинки другие заполняли свободное пространство. Также имелась возможность писать текст, выбирать его цвет, шрифт, размер и тд.",
+            "techStack": [
+              "Redmine",
+              "Gitlab",
+              "Jenkins",
+              "React",
+              "Webpack",
+              "Jest",
+              "MUI",
+              "React-Konva",
+              "и несколько небольших библиотек"
+            ]
+          },
+          "chesstery": {
+            "position": "Front-end Developer",
+            "name": "Chesstery Ltd.",
+            "time": "Август 2021 - Июнь 2022 (11 месяцев)",
+            "description": "Крутой стартап с командой, которая состояла из 4 фронт-енд разработчиков, 1 бек-енд разработчика и проджект менеджера (и дизайнера). Идея стартапа была в том, чтобы сделать аналог lichess, только отличие в том, что на нашей платформе могли обучаться дети игре в шахматы. Больше всего времени работал над страницей конструктора упражнений, который доступен только для преподавателей, в котором они могут создавать свои особенные упражнения для учеников. Также работал над другими страницами: студии, туториал, конструктор пдф и др. Также разрабатывал другие маленькие фичи, например как смена стиля шахматных фигур, смена цвета доски и др. На тот момент сложной задачей для меня стало это форк библиотеки - движка для игры в шахматы и кастомизация ее.",
+            "techStack": [
+              "Github",
+              "React",
+              "Typescript",
+              "Redux",
+              "MUI",
+              "React-Router",
+              "MUI",
+              "WebSocket",
+              "Chess.js(Forked)"
+            ]
+          }
+        }
+      },
+      "skills": {
+        "title": "Навыки"
+      },
+      "techStackTitle": "Стек технологий"
+    },
+    "index": {
+      "title": "Главная",
+      "heading": "Роман Оспанов",
+      "shortDescription": {
+        "name": "Меня зовут Роман.",
+        "position": "Я - фронтенд разработчик.",
+        "experience": "Опыт работы 1.6 года",
+        "details": "Подробнее"
+      },
+      "skills": {
+        "title": "Навыки"
+      },
+      "languages": {
+        "title": "Языки",
+        "list": ["Английский -> A1 - A2", "Русский -> Родной"]
+      },
+      "notes": {
+        "title": "Заметки",
+        "list": ["Живу в Казахстане", "Предпочитаю удалённую работу", "Рассматриваю переезд"]
+      }
+    },
+    "themeSwitcher": {
+      "text": "Переключить тему на",
+      "light": "светлую",
+      "dark": "темную"
+    }
+  }
+}

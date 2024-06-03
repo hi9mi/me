@@ -1,27 +1,26 @@
-import { defineConfig, transformerDirectives } from 'unocss'
-import presetUno from '@unocss/preset-uno'
 import presetAttributify from '@unocss/preset-attributify'
-
+import presetUno from '@unocss/preset-uno'
+import { defineConfig, transformerDirectives } from 'unocss'
 
 export default defineConfig({
-    presets: [
-        presetUno({
-          dark: 'class'
-        }),
-        presetAttributify({
-            prefix: 'uno-',
-            prefixedOnly: true,
-        }),
-    ],
-    transformers: [transformerDirectives()],
-    theme: {
-      fontFamily: {
-        iosevka: ['Iosevka', 'mono'],
-      }
+  presets: [
+    presetUno({
+      dark: 'class',
+    }),
+    presetAttributify({
+      prefix: 'uno-',
+      prefixedOnly: true,
+    }),
+  ],
+  transformers: [transformerDirectives()],
+  theme: {
+    fontFamily: {
+      iosevka: ['Iosevka', 'mono'],
     },
-    preflights: [
-      {
-        getCSS: () => `
+  },
+  preflights: [
+    {
+      getCSS: () => `
         @font-face {
           font-family: 'Iosevka';
           font-display: swap;
@@ -111,7 +110,7 @@ export default defineConfig({
           font-style: italic;
           src: url('/me/fonts/Iosevka-MediumItalic.woff2') format('woff2'), url('/me/fonts/Iosevka-MediumItalic.ttf') format('truetype');
         }
-        `
-      }
-    ]
+        `,
+    },
+  ],
 })

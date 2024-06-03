@@ -1,74 +1,48 @@
 ---
-import BaseLayout from "./base-layout.astro";
-import ThemeSwitcher from "../components/theme-switcher.vue";
-import LanguagePicker from "../components/language-picker.astro";
-import Link from "../components/link.astro";
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import ThemeSwitcher from '../components/theme-switcher.vue'
+import LanguagePicker from '../components/language-picker.astro'
+import Link from '../components/link.astro'
 
-const lang = getLangFromUrl(Astro.url.pathname);
-const t = useTranslations(lang);
+import LinkList from '../components/link-list.astro'
+import socialLinks from '../data/social-links.json'
+import { getLangFromUrl } from '../i18n/get-lang-from-url'
+import { getTranslations } from '../i18n/get-translations'
+import BaseLayout from './base-layout.astro'
+
+const lang = getLangFromUrl(Astro.url.pathname)
+const t = getTranslations(lang)
 ---
 
-<BaseLayout title={t("title.resume")} ogImg={`${import.meta.env.SITE}/me/resume-og.png`}>
-  <header class="py-2.5 border-b-1 border-gray-700 pos-sticky top-0 bg-white dark:bg-gray-800 sm:py-5">
+<BaseLayout
+  title={t('resume.title')}
+  ogImg={`${import.meta.env.SITE}/me/resume-og.png`}
+>
+  <header
+    class="py-2.5 border-b-1 border-gray-700 pos-sticky top-0 bg-white dark:bg-gray-800 sm:py-5"
+  >
     <div class="container flex justify-between gap-3">
       <div>
-        <h1 class="text-2xl font-700 mb-3 sm:text-3xl">{t("heading.resume")}</h1>
-        <Link href={`/me/${lang}/`} class="text-xs sm:text-sm">{t("nav.resume")}</Link>
+        <h1 class="text-2xl font-700 mb-3 sm:text-3xl">
+          {t('resume.heading')}
+        </h1>
+        <Link href={`/me/${lang}/`} class="text-xs sm:text-sm"
+          >{t('resume.nav')}</Link
+        >
       </div>
       <div class="flex items-center gap-3">
         <LanguagePicker />
-        <ThemeSwitcher client:only />
+        <ThemeSwitcher client:only="vue" />
       </div>
     </div>
   </header>
   <div class="container space-y-5 py-5 sm:py-10 sm:space-y-10">
     <slot />
   </div>
-  <footer class="py-2.5 border-t-1 border-gray-700 pos-sticky bottom-0 bg-white dark:bg-gray-800 sm:py-5">
+  <footer
+    class="py-2.5 border-t-1 border-gray-700 pos-sticky bottom-0 bg-white dark:bg-gray-800 sm:py-5"
+  >
     <div class="container">
-      <ul class="flex flex-col text-xs font-300 sm:text-sm">
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            email
-          </span>
-          <Link href="mailto:hi9mmi@gmail.com" target="_blank">hi9mmi@gmail.com</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            phone
-          </span>
-          <Link href="phone:+77086237230" target="_blank">+7 708 623 72 30</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            whatsapp
-          </span>
-          <Link href="https://wa.me/77086237230" target="_blank">+7 708 623 72 30</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            telegram
-          </span>
-          <Link href="https://t.me/hi9mi" target="_blank">t.me/hi9mi</Link>
-        </li>
-        <li class="flex items-center gap-1">
-          <span
-            class="flex w-28 gap-1 after:content-empty after:block after:w-full after:h-0.5 after:bg-gray-300 after:self-end after:mb-1"
-          >
-            github
-          </span>
-          <Link href="https://github.com/hi9mi" target="_blank">github.com/hi9mi</Link>
-        </li>
-      </ul>
+      <LinkList links={socialLinks} />
     </div>
   </footer>
 </BaseLayout>
