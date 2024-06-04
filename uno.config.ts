@@ -15,7 +15,7 @@ export default defineConfig({
   transformers: [transformerDirectives()],
   theme: {
     fontFamily: {
-      iosevka: ['Iosevka', 'mono'],
+      iosevka: ['Iosevka', 'Hack', 'Consolas', 'Courier New', 'monospace'],
     },
   },
   preflights: [
@@ -94,7 +94,7 @@ export default defineConfig({
           src: url('/me/fonts/Iosevka-BoldItalic.woff2') format('woff2'), url('/me/fonts/Iosevka-BoldItalic.ttf') format('truetype');
         }
         @font-face {
-          font-family: 'Iosevka Web';
+          font-family: 'Iosevka';
           font-display: swap;
           font-weight: 500;
           font-stretch: normal;
@@ -103,7 +103,7 @@ export default defineConfig({
         }
 
         @font-face {
-          font-family: 'Iosevka Web';
+          font-family: 'Iosevka';
           font-display: swap;
           font-weight: 500;
           font-stretch: normal;
