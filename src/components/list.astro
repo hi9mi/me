@@ -18,7 +18,7 @@ const { items, direction = 'row' } = Astro.props
 >
   {
     items.map((item) => (
-      <li class="flex gap-2 items-center before:block before:content-empty before:w-2 before:h-2 before:min-w-2 before:min-h-2 before:bg-gray-300 before:rounded">
+      <li class="flex gap-1.5 items-center before:block before:content-empty before:w-1.5 before:h-1.5 before:min-w-1.5 before:min-h-1.5 before:bg-gray-300 before:rounded sm:before:h-2 sm:before:min-h-2 sm:before:w-2 sm:before:min-w-2 sm:gap-2">
         {item}
       </li>
     ))
