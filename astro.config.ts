@@ -6,8 +6,7 @@ import UnoCSS from 'unocss/astro'
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE || 'https://hi9mi.github.io',
-  base: process.env.BASE || '/me',
+  site: process.env.SITE,
   integrations: [
     UnoCSS({
       injectReset: '@unocss/reset/tailwind-compat.css',

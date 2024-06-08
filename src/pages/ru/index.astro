@@ -16,7 +16,7 @@ const t = getTranslations(lang)
 
 <BaseLayout
   title={t('index.title')}
-  ogImg={`${import.meta.env.SITE}/me/index-og.png`}
+  ogImg={`${import.meta.env.SITE}/index-og.png`}
 >
   <div
     class="px-2 flex justify-between gap-3 flex-wrap mb-5 pt-3 max-w-screen-sm w-full max-sm:flex-col-reverse sm-px-5"
@@ -34,7 +34,7 @@ const t = getTranslations(lang)
     <section class="pr-0 sm:pl-5">
       <p class="font-300">{t('index.shortDescription.name')}</p>
       <p class="font-300">{t('index.shortDescription.position')}</p>
-      <Link href="/me/ru/resume" class="py-1 inline-block text-base sm:p-3">
+      <Link href="/ru/resume" class="py-1 inline-block text-base sm:p-3">
         {t('index.shortDescription.details')}
       </Link>
       <p class="font-300">{t('index.shortDescription.experience')}</p>

@@ -15,7 +15,7 @@ const t = getTranslations(lang)
 
 <BaseLayout
   title={t('resume.title')}
-  ogImg={`${import.meta.env.SITE}/me/resume-og.png`}
+  ogImg={`${import.meta.env.SITE}/resume-og.png`}
 >
   <header
     class="py-2.5 border-b-1 border-gray-700 pos-sticky top-0 bg-white dark:bg-gray-800 sm:py-5"
@@ -25,7 +25,7 @@ const t = getTranslations(lang)
         <h1 class="text-2xl font-700 mb-3 sm:text-3xl">
           {t('resume.heading')}
         </h1>
-        <Link href={`/me/${lang}/`} class="text-xs sm:text-sm"
+        <Link href={`/${lang}/`} class="text-xs sm:text-sm"
           >{t('resume.nav')}</Link
         >
       </div>
